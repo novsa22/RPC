@@ -1,11 +1,11 @@
 {
   "name": "dc-rpc",
   "version": "2.0.0",
-  "description": "Discord Rich Presence with Buttons by SpicyDevs.",
+  "description": "Discord Rich Presence",
   "main": "index.js",
   "scripts": {
     "test": "node index.js",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
