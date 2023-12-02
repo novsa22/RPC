@@ -40,7 +40,6 @@ const { joinVoiceChannel } = require('@discordjs/voice');
 client.on("ready", async () => {
     setInterval(() => {
         const voice24 = joinVoice24 ? autoVoice24() : ""
-        voice24();
         const r = new Discord.RichPresence()
         .setApplicationId(config.appID)
         .setType(config.statusType) // PLAYING, STREAMING, COMPETING, LISTENING, WATCHING
