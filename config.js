@@ -7,7 +7,7 @@ module.exports = {
     Name: "With Me, I Am Shiro.",
     State: "Dudu Dududuu ~",
     Details: "Do You Wanna Talk ?",
-    RPCTimeStamp: "1578762000000"
+    RPCTimeStamp: "1578762000000",
     FirstButtonName: "INSTAGRAM",
     FirstButtonUrl: "https://instagram.com/quietartx",
     SecondButtonName: "PRESS TO BE A GOOD PERSON",
