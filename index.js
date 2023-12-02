@@ -39,7 +39,7 @@ let joinVoice24 = config.joinVoice24
 const { joinVoiceChannel } = require('@discordjs/voice');
 client.on("ready", async () => {
     setInterval(() => {
-        const voice24 = joinVoice24 ? autoVoice24() : ""
+        const voice24 = joinVoice24 ? autoVoice24() : "";
         const r = new Discord.RichPresence()
         .setApplicationId(config.appID)
         .setType(config.statusType) // PLAYING, STREAMING, COMPETING, LISTENING, WATCHING
@@ -83,8 +83,6 @@ setTimeout(() => {
         console.log("LOGIN CLIENT BERHASIL!")
     }
 }, 1 * 1000 * 20);
-const keepAlive = require("./server.js");
-keepAlive();
 client.login(
   config.token
 );
