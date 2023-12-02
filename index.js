@@ -39,7 +39,7 @@ let joinVoice24 = config.joinVoice24
 const { joinVoiceChannel } = require('@discordjs/voice');
 client.on("ready", async () => {
     setInterval(() => {
-        const voice24 = joinVoice24 ? autoVoice24() ; ""
+        const voice24 = joinVoice24 ? autoVoice24() : ""
         voice24();
         const r = new Discord.RichPresence()
         .setApplicationId(config.appID)
@@ -61,7 +61,7 @@ client.on("ready", async () => {
 
 function autoVoice24() {
     setInterval( async () => {
-        client.channels.fetch(channelID24)
+        client.channels.fetch(config.channelID24)
         .then((channel) => {
             const VoiceConnection = joinVoiceChannel({
                 channelId: channel.id,
