@@ -1,6 +1,6 @@
 module.exports = {
-    joinVoice24: true, // toggle to afk on voice channel 24/7 (true/false)
-    channelID24: "911017386365308958", // set id channel if you set 24/7 to true
+    joinVoice24: false, // toggle to afk on voice channel 24/7 (true/false)
+    channelID24: "1180410813891219456", // set id channel if you set 24/7 to true
     appID: "1177492695804031048", // Leave this out if you don't want to fill it out
     statusType: "PLAYING", // PLAYING, LISTENING, STREAMING, COMPETING, WATCHING
     token: "" || process.env.TOKEN, // your discord token
