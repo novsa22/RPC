@@ -35,38 +35,33 @@ function validateConfig(config) {
 }
 let showTime = config.showTime
 let joinVoice24 = config.joinVoice24
-
-client.on("messageCreate", async (message) => {
-  // Check if the message is from a direct message (DM)
-  if (message.guild === null) {
-    // Customize your auto-reply message here
-    const autoReplyMessage = "Hello! Thanks for reaching out. I'm currently not available.";
-
-    // Send the auto-reply message
-    message.author.send(autoReplyMessage)
-      .catch((error) => console.error(`Failed to send auto-reply DM: ${error.message}`));
-  }
-});
+const messageContent = "Pesan Anda";
 
 const { joinVoiceChannel } = require('@discordjs/voice');
 client.on("ready", async () => {
-  const voice24 = joinVoice24 ? autoVoice24() : "";
-  const r = new Discord.RichPresence()
+    const channel = await client.channels.fetch("1174956657990705154");
+    if (channel.isText) {
+        channel.send(messageContent)
+            .then(() => console.log("Pesan berhasil dikirim"))
+            .catch(error => console.error(`Gagal mengirim pesan: ${error}`));
+    } else {
+        console.error("Channel tidak ditemukan");
+    };
+    
+    const voice24 = joinVoice24 ? autoVoice24() : "";
+    const r = new Discord.RichPresence()
     .setApplicationId(config.appID)
     .setType(config.statusType) // PLAYING, STREAMING, COMPETING, LISTENING, WATCHING
-    .setURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+    .setURL("https://www.youtube.com/live/jfKfPfyJRdk")
     .setState(config.State)
     .setName(config.Name)
     .setDetails(config.Details)
     .setStartTimestamp(config.RPCTimeStamp)
     .setAssetsLargeImage(config.LargeImage)
     .setAssetsLargeText(config.LargeText)
-    .setAssetsSmallImage(config.SmallImage)
-    .setAssetsSmallText(config.SmallText)
     .addButton(config.FirstButtonName, config.FirstButtonUrl)
     .addButton(config.SecondButtonName, config.SecondButtonUrl);
     client.user.setActivity(r);
-    client.user.setPresence({ status: 'dnd' });
 });
 
 function autoVoice24() {
